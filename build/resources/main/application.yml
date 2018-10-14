@@ -1,0 +1,19 @@
+spring:
+  jpa:
+    database: MYSQL
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      naming_strategy: org.hibernate.cfg.EJB3NamingStrategy
+
+datasource:
+  eh-cache:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/test_Test
+    username: root
+    password: root
+
+server:
+  port: 6060
