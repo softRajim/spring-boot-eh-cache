@@ -40,14 +40,14 @@ public class DataConfig extends AbstractDataConfig {
 
 
     @Primary
-    @Bean(name = "adminEMF")
+    @Bean(name = "eh-cacheEMF")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(@Qualifier(value = DATASOURCE_NAME) DataSource dataSource) {
         return buildBackwardEntityManagerFactory(dataSource, PU_NAME, PACKAGES);
     }
 
     @Primary
-    @Bean(name = "adminTM")
-    public PlatformTransactionManager transactionManager(@Qualifier(value = "adminEMF") EntityManagerFactory emf) {
+    @Bean(name = "eh-cacheEMF")
+    public PlatformTransactionManager transactionManager(@Qualifier(value = "eh-cacheEMF") EntityManagerFactory emf) {
         return buildTransactionManager(emf);
     }
 

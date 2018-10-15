@@ -17,16 +17,12 @@ public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, unique = true)
-    private long id;
+    private Long id;
 
     @Column(name = "emp_name")
     private String name;
 
     @Column(name = "emp_salary")
     private double salary;
-
-    @OneToOne(mappedBy = "employee")
-    private Address address;
 
 }

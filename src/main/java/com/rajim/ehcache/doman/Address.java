@@ -15,9 +15,8 @@ import javax.persistence.*;
 public class Address {
 
     @Id
-    @Column(unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "address_line1")
     private String addressLine1;
@@ -28,7 +27,7 @@ public class Address {
     @Column(name = "city")
     private String city;
 
-    @OneToOne
-    @PrimaryKeyJoinColumn
+    @ManyToOne
+    @JoinColumn(name = "employee_id" , referencedColumnName = "id")
     private Employee employee;
 }

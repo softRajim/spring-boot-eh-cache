@@ -5,12 +5,12 @@ spring:
     show-sql: true
     generate-ddl: true
     hibernate:
-      ddl-auto: update
-      naming_strategy: org.hibernate.cfg.EJB3NamingStrategy
+     ddl-auto: update
+     naming_strategy: com.esewa.cas.shared.CustomNamingStrategy
 
 datasource:
   eh-cache:
-    driverClassName: com.mysql.jdbc.Driver
+    databaseDriverName: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost/test_Test
     username: root
     password: root
