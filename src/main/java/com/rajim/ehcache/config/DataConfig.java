@@ -46,7 +46,7 @@ public class DataConfig extends AbstractDataConfig {
     }
 
     @Primary
-    @Bean(name = "eh-cacheEMF")
+    @Bean(name = "eh-cacheTM")
     public PlatformTransactionManager transactionManager(@Qualifier(value = "eh-cacheEMF") EntityManagerFactory emf) {
         return buildTransactionManager(emf);
     }

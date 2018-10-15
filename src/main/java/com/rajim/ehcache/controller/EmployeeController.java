@@ -4,10 +4,9 @@ import com.rajim.ehcache.doman.Employee;
 import com.rajim.ehcache.dto.EmployeeDto;
 import com.rajim.ehcache.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author rajim on 10/14/18
@@ -26,6 +25,11 @@ public class EmployeeController {
     @PostMapping(value = "")
     public Employee addEmployee(@RequestBody EmployeeDto employeeDto) {
         return employeeService.addEmployeeInformation(employeeDto);
+    }
+
+    @GetMapping(value = "")
+    public List<Employee> getAllEmployee() {
+        return employeeService.getAllEmployee();
     }
 
 
